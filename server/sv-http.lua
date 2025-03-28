@@ -23,6 +23,18 @@ function http.server()
         return self.route('POST', path, callback, auth)
     end
 
+    function self.put(path, callback, auth)
+        return self.route('PUT', path, callback, auth)
+    end
+
+    function self.patch(path, callback, auth)
+        return self.route('PATCH', path, callback, auth)
+    end
+
+    function self.delete(path, callback, auth)
+        return self.route('DELETE', path, callback, auth)
+    end
+
     function self.build()
         SetHttpHandler(function(request, response)
             for path, route in pairs(self.routes) do
