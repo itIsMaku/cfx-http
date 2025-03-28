@@ -121,8 +121,8 @@ function http.put(url, headers, body, async)
     return http.request('PUT', url, headers, body, async)
 end
 
-function http.patch(url, headers, async)
-    return http.request('PATCH', url, headers, nil, async)
+function http.patch(url, headers, body, async)
+    return http.request('PATCH', url, headers, body, async)
 end
 
 function http.delete(url, headers, async)
