@@ -109,12 +109,24 @@ function http.request(method, url, headers, body, async)
     return Citizen.Await(p)
 end
 
+function http.get(url, headers, async)
+    return http.request('GET', url, headers, nil, async)
+end
+
 function http.post(url, headers, body, async)
     return http.request('POST', url, headers, body, async)
 end
 
-function http.get(url, headers, async)
-    return http.request('GET', url, headers, nil, async)
+function http.put(url, headers, body, async)
+    return http.request('PUT', url, headers, body, async)
+end
+
+function http.patch(url, headers, async)
+    return http.request('PATCH', url, headers, nil, async)
+end
+
+function http.delete(url, headers, async)
+    return http.request('DELETE', url, headers, nil, async)
 end
 
 exports('http', function()
